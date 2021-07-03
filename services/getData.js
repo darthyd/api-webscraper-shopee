@@ -1,9 +1,14 @@
+
 const puppeteer = require('puppeteer');
 
-module.exports = async function getData(key) {
+module.exports = async function getData(key, times) {
   const browser = await puppeteer.launch({
-    headless: false,
-    devtools: false
+    headless: true,
+    devtools: false,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
   });
   const page = await browser.newPage();
   await page.goto(`https://shopee.com.br/search?keyword=${key}&page=${0}`, {
