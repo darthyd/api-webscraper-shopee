@@ -1,7 +1,7 @@
 
 const puppeteer = require('puppeteer');
 
-module.exports = async function getData(key, times) {
+module.exports = async function getData(key) {
   const browser = await puppeteer.launch({
     headless: true,
     devtools: false,
