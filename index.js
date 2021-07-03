@@ -26,8 +26,8 @@ app.get('/api/search/:busca/:pages', async function(req, res) {
 
 app.use(express.static(path.join(__dirname, "..", "build")));
 
-app.get("/app/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+app.get("/", (req, res) => {
+  res.send('OK')
 })
 
 // start express server on port 5000
