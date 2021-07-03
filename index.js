@@ -3,15 +3,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const getData = require('./services/getData2');
+const getData = require('./services/getData');
 
 app.use(cors())
 app.use(express.json())
 
-app.get('/api/search/:busca/:pages', async function(req, res) {
+app.get('/api/search/:busca', async function(req, res) {
   try {
 
-    const result = await getData(req.params.busca, Number(req.params.pages))
+    const result = await getData(req.params.busca)
     console.log(result)
     res.json(result)
 
