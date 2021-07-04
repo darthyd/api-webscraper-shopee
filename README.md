@@ -3,3 +3,4 @@
 ### Technologies that I used
 - Node
 - Express
+- Puppeteer
